@@ -1,24 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="NaverMapSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRv-bc-4C8">
+                                <rect key="frame" x="184" y="438" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onShowLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bMd-6n-89M"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CRv-bc-4C8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EMf-db-HyT"/>
+                            <constraint firstItem="CRv-bc-4C8" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Gz3-hc-bfd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="CcS-pZ-SsZ" kind="show" id="ltL-fJ-xvP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-375" y="104"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="Cz2-6W-1CD">
+            <objects>
+                <viewController storyboardIdentifier="LocationViewController" id="CcS-pZ-SsZ" customClass="LocationViewController" customModule="NaverMapSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ca4-Ox-Ksu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8T-tx-o2H" customClass="NMFNaverMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvm-00-MoK">
+                                <rect key="frame" x="20" y="725" width="53" height="53"/>
+                                <state key="normal" image="location_center_floating"/>
+                                <connections>
+                                    <action selector="onLocationUpdateAction:" destination="CcS-pZ-SsZ" eventType="touchUpInside" id="hdb-Mn-nse"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DLr-bZ-VEy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DLr-bZ-VEy" firstAttribute="bottom" secondItem="B8T-tx-o2H" secondAttribute="bottom" id="CAH-ib-FVl"/>
+                            <constraint firstItem="Rvm-00-MoK" firstAttribute="leading" secondItem="DLr-bZ-VEy" secondAttribute="leading" constant="20" id="MV8-lZ-6x1"/>
+                            <constraint firstItem="DLr-bZ-VEy" firstAttribute="bottom" secondItem="Rvm-00-MoK" secondAttribute="bottom" constant="30" id="UdA-3g-7ch"/>
+                            <constraint firstItem="DLr-bZ-VEy" firstAttribute="trailing" secondItem="B8T-tx-o2H" secondAttribute="trailing" id="eE8-c6-llj"/>
+                            <constraint firstItem="B8T-tx-o2H" firstAttribute="leading" secondItem="DLr-bZ-VEy" secondAttribute="leading" id="mX9-n0-p7V"/>
+                            <constraint firstItem="B8T-tx-o2H" firstAttribute="top" secondItem="DLr-bZ-VEy" secondAttribute="top" id="pi7-tW-4w1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="voI-Oq-ejj"/>
+                    <connections>
+                        <outlet property="naverMapView" destination="B8T-tx-o2H" id="rAA-zD-eV5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jJ0-QQ-xvH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="424.63768115942031" y="103.79464285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location_center_floating" width="53" height="53"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

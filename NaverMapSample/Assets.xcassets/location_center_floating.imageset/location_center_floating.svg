@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
+    <defs>
+        <filter id="타원_22" width="53" height="53" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="2"/>
+            <feGaussianBlur result="blur" stdDeviation="2.5"/>
+            <feFlood flood-color="#00141a" flood-opacity=".302"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <style>
+            .cls-3{fill:none;stroke:#c1c1c1;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px}
+        </style>
+    </defs>
+    <g id="location_center_floating" transform="translate(7.012 10.362)">
+        <g filter="url(#타원_22)" transform="translate(-7.01 -10.36)">
+            <circle id="타원_22-2" cx="19" cy="19" r="19" fill="#fff" transform="translate(7.5 5.5)"/>
+        </g>
+        <g id="location_center_icon" transform="translate(10.488 5.138)">
+            <circle id="타원_35" cx="6.039" cy="6.039" r="6.039" fill="none" stroke="#c1c1c1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5px" transform="translate(2.961 2.961)"/>
+            <path id="선_11" d="M0 0L0 5.922" class="cls-3" transform="translate(9)"/>
+            <path id="선_12" d="M0 0L5.922 0" class="cls-3" transform="translate(0 9)"/>
+            <path id="선_13" d="M0 5.922L0 0" class="cls-3" transform="translate(9 12.078)"/>
+            <path id="선_14" d="M5.922 0L0 0" class="cls-3" transform="translate(12.078 9)"/>
+        </g>
+    </g>
+</svg>

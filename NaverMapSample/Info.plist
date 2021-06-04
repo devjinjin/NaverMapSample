@@ -62,5 +62,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>서비스의 이용을 위해 사용자의 위치를 받습니다.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>서비스의 이용을 위해 사용자의 위치를 받습니다.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>서비스의 이용을 위해 사용자의 위치를 받습니다.</string>
+
 </dict>
 </plist>

@@ -1,0 +1,54 @@
+1. Naver 맵 사용을 위한 라이브러리 다운
+
+    pod init
+
+2. podfile 내용중
+
+  pod 'NMapsMap','3.10.0' 추가
+
+3. M1 이슈로 인한 명령어 :
+    arch -x86_64 pod install
+
+4. 네이버 API 가입 후
+https://guide.ncloud-docs.com/docs/naveropenapiv3-maps-ios-sdk-v3-start
+
+clientID 값
+AppDelegate에
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        
+        //네이버맵
+        NMFAuthManager.shared().clientId = "????????"
+        
+        return true
+    }
+
+추가
+
+5. Storyboard에 UIView 를 NMFNaverMapView 로 Class적용
+
+6. Info.plist
+
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>사용자의 위치를 받습니다.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>사용자의 위치를 받습니다.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>사용자의 위치를 받습니다.</string>
+
+
+7. 위치 권한
+ 1) OS 전체 권한이 없을 경우
+ viewwillapear에서 권한 확인후 Setting페이지로 이동하는 권한 획득 요구
+
+ 2) App의 권한이 없을 경우
+ 
+ 
+ 3) App이 한번만 권한을 얻을 경우
+ 
+ 
+ 3) App이 항상 사용하는 권한일 경우
+ 
+ 
+
